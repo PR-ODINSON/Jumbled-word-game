@@ -1,13 +1,21 @@
 import random
+from random_word import RandomWords
 print("Welcome to the Jumble Game")
 player_1=input("Enter Player1 name: ")
 player_2=input("Enter Player2 name: ")
 
-def choose_words():
-  words = ["sachin", "prithvi", "guava", "mango", "apple", "banana", "orange", "papaya", "grapes", "watermelon", "elephant", "tiger", "lion", "zebra", "horse", "donkey", "cat", "dog", "mouse", "ferrari", "mercedes", "bmw", "audi", "porsche", "lamborghini", "tesla", "ford", "toyota", "nissan", "mitsubishi", "subaru", "mazda", "jaguar", "land rover", "rolls royce", "bugatti", "blue", "red", "green", "yellow", "orange", "purple", "black", "white", "brown", "gray", "pink", "noodles", "pizza", "burger", "sushi", "pasta", "college", "university", "school", "student", "teacher", "principal"]
 
-  pick=random.choice(words)
-  return pick
+
+    
+
+# # Example usage
+#   random_word = generate_random_word()
+#   print("Random Word:", random_word)
+
+def choose_words():
+  r = RandomWords()
+  return r.get_random_word()
+
 def jumbled_words(word):
   jumbled="".join(random.sample(word,len(word)))
   return jumbled
@@ -31,6 +39,7 @@ def play(point_1,point_2):
     picked_word=choose_words()
     question=jumbled_words(picked_word)
     print("The jumbled word is-->",question)
+    print("Hint: The first leter should be",picked_word[0],"And the last letter should be",picked_word[-1])
     if turn%2==0:
       print(player_1,"Your Turn to play")
       answer=input("What's on your mind? ")
