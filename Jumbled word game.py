@@ -4,23 +4,18 @@ print("Welcome to the Jumble Game")
 player_1=input("Enter Player1 name: ")
 player_2=input("Enter Player2 name: ")
 
-
-
-    
-
-# # Example usage
-#   random_word = generate_random_word()
-#   print("Random Word:", random_word)
-
 def choose_words():
+    # Using the RandomWords class to get a random word
   r = RandomWords()
   return r.get_random_word()
 
 def jumbled_words(word):
+    # Creating a jumbled version of the word
   jumbled="".join(random.sample(word,len(word)))
   return jumbled
 
 def Thank_you(player_1,player_2,point_1,point_2):
+    # Displaying final scores and a thank you message
   print(player_1,"Your score is",point_1)
   print(player_2,"Your score is",point_2)
   print("Thank you for playing with us")
@@ -30,10 +25,6 @@ def Thank_you(player_1,player_2,point_1,point_2):
 
 
 def play(point_1,point_2):
-  
-  
-  
-  
   turn=0
   while(1):
     picked_word=choose_words()
@@ -54,7 +45,6 @@ def play(point_1,point_2):
       print("BTW the correct word is",picked_word)
         
       d = int(input(player_1 + ", Press 1 to continue and 0 to quit: "))
-
       c = int(input(player_2 + ", Press 1 to continue and 0 to quit: "))
 
       if c==0 and d==0:
